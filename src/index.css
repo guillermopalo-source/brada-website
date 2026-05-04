@@ -1,0 +1,335 @@
+/* ============================================
+   FONTS
+   ============================================ */
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('/assets/fonts/Inter_Tight/InterTight-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('/assets/fonts/Inter_Tight/InterTight-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('/assets/fonts/Inter_Tight/InterTight-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('/assets/fonts/Inter_Tight/InterTight-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Garamond Std';
+  src: url('/assets/fonts/ITC Garamond Std/ITCGaramondStd-BkCond.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Garamond Std';
+  src: url('/assets/fonts/ITC Garamond Std/ITCGaramondStd-BkCondIta.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Covered By Your Grace';
+  src: url('/assets/fonts/Covered/CoveredByYourGrace-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   CSS VARIABLES — DESIGN TOKENS
+   ============================================ */
+@layer base {
+  :root {
+    --background: 0 0% 3.5%;
+    /* #090909 dark default */
+    --foreground: 50 43% 96%;
+    /* #fbf9f0 */
+    --card: 0 0% 5%;
+    --card-foreground: 50 43% 96%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 50 43% 96%;
+    --primary: 50 43% 96%;
+    --primary-foreground: 0 0% 3.5%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 50 43% 96%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 50 43% 96%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 50 43% 96%;
+    --radius: 0.5rem;
+  }
+
+  .light {
+    --background: 50 43% 96%;
+    /* #fbf9f0 */
+    --foreground: 0 0% 3.5%;
+    --card: 50 43% 96%;
+    --card-foreground: 0 0% 3.5%;
+    --popover: 50 43% 96%;
+    --popover-foreground: 0 0% 3.5%;
+    --primary: 0 0% 3.5%;
+    --primary-foreground: 100 10% 97%;
+    --secondary: 56 71% 96%;
+    --secondary-foreground: 0 0% 3.5%;
+    --muted: 56 71% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 56 71% 96%;
+    --accent-foreground: 0 0% 3.5%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 3.5%;
+  }
+}
+
+/* ============================================
+   BASE RESET & GLOBAL THEME TRANSITION
+   ============================================ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /*
+    THEME TRANSITION GLOBAL
+    Usamos transition-property en lugar del shorthand `transition`
+    para NO pisar las transiciones de transform/opacity que usa GSAP.
+    Todos los elementos cambian color al mismo tiempo → no más desync.
+  */
+  *,
+  *::before,
+  *::after {
+    transition-property: color, background-color, border-color, fill, stroke;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html {
+    /* scroll-behavior: smooth removido — Lenis maneja el scroll */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    /* transition-colors removido del body — la regla global de arriba lo cubre */
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .backdrop-blur-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* GPU Acceleration */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /*
+    IMPORTANTE: .transition-gpu sobreescribe transform y opacity explícitamente.
+    Esto es correcto — GSAP también puede pisar estas props, lo cual es intencional.
+  */
+  .transition-gpu {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+
+  .ease-expo-out {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* ============================================
+   PERFORMANCE — 60FPS
+   ============================================ */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.contain-layout {
+  contain: layout style paint;
+}
+
+.promote-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+::selection {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .will-change-transform,
+  .will-change-opacity {
+    will-change: auto;
+  }
+}
+
+/* ============================================
+   IMAGE OPTIMIZATION
+   ============================================ */
+img {
+  content-visibility: auto;
+}
+
+/* ============================================
+   OUR WORKS BUTTON
+   ============================================ */
+.btn-our-works {
+  background-color: #fbf9f0;
+  color: #101010;
+  border: none;
+  border-radius: 4px;
+  width: 125px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  /* Este transition es intencional y específico — no entra en conflicto con el global */
+  transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .btn-our-works {
+    width: 105px;
+    height: 38px;
+    font-size: 0.8rem;
+  }
+}
+
+.btn-our-works:hover {
+  font-family: 'ITC Garamond Std', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.light .btn-our-works {
+  background-color: #101010;
+  color: #fbf9f0;
+}
+
+/* ============================================
+   LOGO MARQUEE ANIMATION
+   ============================================ */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ============================================
+   ASSET PROTECTION — No drag, no select
+   ============================================ */
+img,
+svg,
+video,
+a {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}

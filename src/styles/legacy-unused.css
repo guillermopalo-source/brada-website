@@ -1,0 +1,157 @@
+/* 
+  LEGACY UNUSED CSS BACKUP
+  These styles were identified as orphaned and removed from the active CSS bundle to improve performance.
+*/
+
+/* From index.css */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideOutToRight {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+@keyframes menuItemReveal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-menu-open {
+    animation: slideInFromRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-menu-close {
+    animation: slideOutToRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.menu-item {
+    opacity: 0;
+    animation: menuItemReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hamburger menu animation */
+.hamburger-line {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.hamburger-open .hamburger-line:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger-open .hamburger-line:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animate-marquee-reverse {
+    display: flex;
+    width: max-content;
+    animation: marquee-reverse 20s linear infinite;
+}
+
+/* From tailwind.config.js */
+
+/*
+      "fade-in-up": {
+        "0%": { opacity: "0", transform: "translateY(20px)" },
+        "100%": { opacity: "1", transform: "translateY(0)" },
+      },
+      "fade-in": {
+        "0%": { opacity: "0" },
+        "100%": { opacity: "1" },
+      },
+      "slide-in-right": {
+        "0%": { transform: "translateX(100%)" },
+        "100%": { transform: "translateX(0)" },
+      },
+      "slide-out-right": {
+        "0%": { transform: "translateX(0)" },
+        "100%": { transform: "translateX(100%)" },
+      },
+      "scroll": {
+        from: { transform: "translate3d(0, 0, 0)" },
+        to: { transform: "translate3d(-50%, 0, 0)" },
+      },
+      "page-reveal": {
+        "0%": { opacity: "0", transform: "translateY(20px)", filter: "blur(10px)" },
+        "100%": { opacity: "1", transform: "translateY(0)", filter: "blur(0px)" },
+      },
+      
+      "fade-in-up": "fade-in-up 0.5s ease-out forwards",
+      "fade-in": "fade-in 0.5s ease-out forwards",
+      "slide-in-right": "slide-in-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+      "slide-out-right": "slide-out-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+      "scroll": "scroll 60s linear infinite",
+      "page-reveal": "page-reveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+*/

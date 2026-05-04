@@ -1,0 +1,1 @@
+import{u as a,g as o}from"./vendor-gsap-xpmLH8Qn.js";import{A as r}from"./config-D0f8ZL2Z.js";const u=e=>{a(()=>{if(!e.current)return;const t=e.current.querySelectorAll(".page-enter");t.length!==0&&o.fromTo(t,{opacity:0,y:r.y},{opacity:1,y:0,duration:r.duration,ease:r.ease,stagger:r.stagger,clearProps:"filter"})},{scope:e})};export{u};
