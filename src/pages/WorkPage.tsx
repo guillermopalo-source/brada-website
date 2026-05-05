@@ -211,7 +211,7 @@ export default function WorkPage() {
                 <section
                     className="relative left-1/2 -translate-x-1/2 w-screen h-screen bg-background overflow-hidden flex items-center"
                 >
-                    <div className="w-full h-full flex items-center overflow-hidden">
+                    <div className="w-full h-full flex items-center translate-y-8 overflow-hidden">
                         <div
                             ref={trackRef}
                             className="relative h-[80vh] flex-none"
