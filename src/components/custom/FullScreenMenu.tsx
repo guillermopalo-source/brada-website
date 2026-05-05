@@ -36,7 +36,7 @@ const FullScreenMenu: React.FC<FullScreenMenuProps> = ({ isOpen, onClose }) => {
 
         { label: 'About', path: `/${lang}/about` },
 
-        { label: 'Latest', path: `/${lang}` },
+        { label: 'Latest', path: `/${lang}/work/lemon-cash` },
 
     ];
 

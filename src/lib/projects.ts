@@ -122,11 +122,11 @@ export const projects: Project[] = [
             tags: ['CREATIVE DIRECTION', 'CAMPAIGN', 'MEDIA CONTENT', 'FILM PRODUCTION'],
         },
         gallery: [
-            { type: 'text', title: 'THE IDEA:', text: 'Visualizar lo invisible. La idea del spot fue reventar la caja negra de una transacción tradicional. Combinamos live-action crudo con animación 3D para meternos literalmente en las entrañas del posnet y documentar el viaje frenético del cashback.', className: '!py-4' },
+            { type: 'text', title: 'THE IDEA:', text: 'Visualizar lo invisible. La idea del spot fue reventar la caja negra de una transacción tradicional. Combinamos live-action crudo con animación 3D para meternos literalmente en las entrañas del posnet y documentar el viaje frenético del cashback.', className: '!py-4 [@media(min-width:1440px)]:!py-8' },
             { type: 'full', src: `${b('lemon', 'campania_qr')}/gallery_detail/gallery_row-0-1x_f` },
             {
                 type: 'custom', src: [
-                    { src: `${b('lemon', 'campania_qr')}/gallery_detail/gallery_custom-2-0_1x`, width: 440, height: 520, className: 'mx-auto md:ml-8 lg:ml-12 lg-custom-img-left' },
+                    { src: `${b('lemon', 'campania_qr')}/gallery_detail/gallery_custom-2-0_1x`, width: 440, height: 520, className: 'mx-auto md:ml-8 lg:ml-12 lg-custom-img-left [@media(min-width:1440px)]:!pt-8' },
                     { src: `${b('lemon', 'campania_qr')}/gallery_detail/gallery_custom-2-1_1x`, width: 340, height: 340, className: 'mx-auto md:mt-12 lg-custom-img-right' },
                 ], className: 'grid grid-cols-1 md:grid-cols-2 w-full gap-6 md:gap-8 items-start lg-custom-grid-2'
             },
@@ -168,7 +168,7 @@ export const projects: Project[] = [
                 className: 'hidden md:grid'
             },
 
-            { type: 'text', title: 'OUTCOME:', text: 'Disparamos las descargas y reventamos el engagement de la app con el lanzamiento del pago vía QR. Más allá del feature tecnológico, consolidamos el sentido de pertenencia: convertimos a los usuarios en verdaderos insiders de la cultura Lemon.', className: '!py-4 !-mt-6' },
+            { type: 'text', title: 'OUTCOME:', text: 'Disparamos las descargas y reventamos el engagement de la app con el lanzamiento del pago vía QR. Más allá del feature tecnológico, consolidamos el sentido de pertenencia: convertimos a los usuarios en verdaderos insiders de la cultura Lemon.', className: '!py-4 !-mt-6 [@media(min-width:1440px)]:!py-8 [@media(min-width:1440px)]:!mt-0' },
             { type: 'full', src: `${b('lemon', 'campania_qr')}/gallery_detail/gallery_row-6_1x_f` },
             {
                 type: 'custom', src: [
@@ -183,7 +183,7 @@ export const projects: Project[] = [
                 ],
                 className: 'grid grid-cols-1 md:grid-cols-[2fr_1fr] lg:grid-cols-[3fr_1fr] gap-6 md:gap-16 lg:gap-24 mb-8 lg-scaled-grid-8'
             },
-            { type: 'full', src: `${b('lemon', 'campania_qr')}/gallery_detail/gallery_row-5_2x_h` },
+            { type: 'full', src: `${b('lemon', 'campania_qr')}/gallery_detail/gallery_row-5_2x_h`, className: '[@media(min-width:1440px)]:!pt-12' },
             {
                 type: 'custom', src: [
                     { src: `${b('lemon', 'campania_qr')}/gallery_detail/gallery_custom-9_2x`, width: 350, height: 622, className: 'md:ml-28 lg:ml-16 lg-lemy-body' },
@@ -230,7 +230,7 @@ export const projects: Project[] = [
         },
         gallery: [
 
-            { type: 'text', title: 'THE VIBE:', text: 'In the relentless pursuit of progress, Converse All Stars change the game so everyone can play.Independent enough not to follow, Converse All Stars dare to be bold, embrace what makes them different and have the courage to take the first step forward.' },
+            { type: 'text', title: 'THE VIBE:', text: 'In the relentless pursuit of progress, Converse All Stars change the game so everyone can play.Independent enough not to follow, Converse All Stars dare to be bold, embrace what makes them different and have the courage to take the first step forward.', className: '!py-4 [@media(min-width:1440px)]:!py-8' },
             { type: 'full', src: `${b('converse', 'all_stars')}/gallery_detail/gallery_row-1_1x_f` },
 
             {
@@ -251,11 +251,11 @@ export const projects: Project[] = [
                 ],
                 className: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 mb-16 lg:mb-32 items-start',
                 overlayText: 'CHANGE\nTHE GAME',
-                overlayClassName: 'absolute bottom-[0%] left-3/4 -translate-x-1/2 z-10 converse-overlay-text',
+                overlayClassName: 'absolute bottom-[0%] [@media(min-width:1440px)]:bottom-[-5%] left-3/4 -translate-x-1/2 z-10 converse-overlay-text',
                 overlayTextClassName: '-rotate-[4deg] text-center'
             },
             { type: 'half', aspect: 'aspect-[4/5]', src: [`${b('converse', 'all_stars')}/gallery_detail/gallery_row-3_1x_h`, `${b('converse', 'all_stars')}/gallery_detail/gallery_row-4_1x_h`] },
-            { type: 'text', title: 'OUTCOME:', text: 'Creating with intent, Converse All Stars change the world through sustainability, diversity, inclusion & belonging and youth development.Who is a Converse All Star?', className: '!py-4' },
+            { type: 'text', title: 'OUTCOME:', text: 'Creating with intent, Converse All Stars change the world through sustainability, diversity, inclusion & belonging and youth development.Who is a Converse All Star?', className: '!py-4 [@media(min-width:1440px)]:!py-8' },
             { type: 'full', aspect: 'aspect-auto', src: `${b('converse', 'all_stars')}/gallery_detail/gallery_row-5_1x_f` },
             {
                 type: 'custom',
@@ -314,7 +314,7 @@ export const projects: Project[] = [
             overview: 'Desplegamos un ecosistema 360º (audiovisual, OOH y plataformas digitales) para plasmar la actitud "Born Different". Un enfoque crudo y cargado de humor, diseñado para conectar directamente con la cultura urbana.',
             tags: ['FILM PRODUCTION', 'MOTION', 'VFX', 'OOH']
         },
-        gallery: [{ type: 'text', title: 'THE IDEA:', text: '¿Cómo representar la colisión de dos sabores que nacieron para estar juntos? Los llevamos directamente al skatepark. Vestimos a skaters profesionales con trajes gigantes y bizarros de frascos de mantequilla de maní y mermelada. La narrativa los enfrenta en un duelo de miradas digno del cine de los 80, antes de lanzarse por un bowl de skate, chocar a toda velocidad y explotar para fusionarse en el nuevo Maxibon.', className: 'lg-text-idea !py-4' },
+        gallery: [{ type: 'text', title: 'THE IDEA:', text: '¿Cómo representar la colisión de dos sabores que nacieron para estar juntos? Los llevamos directamente al skatepark. Vestimos a skaters profesionales con trajes gigantes y bizarros de frascos de mantequilla de maní y mermelada. La narrativa los enfrenta en un duelo de miradas digno del cine de los 80, antes de lanzarse por un bowl de skate, chocar a toda velocidad y explotar para fusionarse en el nuevo Maxibon.', className: 'lg-text-idea !py-4 [@media(min-width:1440px)]:!py-8' },
         { type: 'full', src: `${b('maxibon', 'skate_crush')}/gallery_detail/gallery_row-1_1x_f`, className: 'maxibon-row-1' },
 
         {
@@ -331,25 +331,25 @@ export const projects: Project[] = [
                     className: 'w-full max-w-[480px] mx-auto md:mr-auto md:ml-0 my-auto maxibon-img-2'
                 },
             ],
-            className: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 mb-0 md:mb-0 lg:mb-32 items-start',
+            className: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 mb-0 md:mb-0 lg:mb-32 [@media(min-width:1440px)]:mb-8 items-start',
             overlayText: 'BEST\nFRIENDS?',
             overlayClassName: 'absolute bottom-[0%] left-3/4 -translate-x-1/2 z-10 maxibon-overlay-text',
             overlayTextClassName: '-rotate-[4deg] text-center'
         },
-        { type: 'text', title: 'OUTCOME:', text: 'Logramos un relanzamiento explosivo que respondió directamente al pedido de la audiencia, uniendo a los dos sabores de la manera más auténtica y "Maxibon" posible. El resultado fue una campaña inmersiva y memorable que consolidó a la marca dentro del ecosistema urbano a través de pura adrenalina visual y diversión absurda.', className: 'lg-text-outcome !py-4' },
+        { type: 'text', title: 'OUTCOME:', text: 'Logramos un relanzamiento explosivo que respondió directamente al pedido de la audiencia, uniendo a los dos sabores de la manera más auténtica y "Maxibon" posible. El resultado fue una campaña inmersiva y memorable que consolidó a la marca dentro del ecosistema urbano a través de pura adrenalina visual y diversión absurda.', className: 'lg-text-outcome !py-4 [@media(min-width:1440px)]:!pt-12 [@media(min-width:1440px)]:!pb-10' },
         { type: 'full', aspect: 'aspect-auto', src: `${b('maxibon', 'skate_crush')}/gallery_detail/gallery_row-3_1x_h.mp4` },
         {
             type: 'custom',
             src: [
                 {
                     src: `${b('maxibon', 'skate_crush')}/gallery_detail/gallery_half-4_1x`,
-                    className: 'w-full max-w-[490px] mx-auto md:mr-auto md:translate-y-[80px] maxibon-img-4'
+                    className: 'w-full max-w-[490px] mx-auto md:mr-auto md:translate-y-[80px] [@media(min-width:1440px)]:translate-y-[40px] maxibon-img-4'
                 },
                 {
                     src: `${b('maxibon', 'skate_crush')}/gallery_detail/gallery_half-5_1x.webp`,
                     // md:translate-y-[80px] la mueve hacia abajo visualmente sin tocar la grilla. 
                     // Podés cambiar ese 80px por el número exacto que quieras.
-                    className: 'w-full max-w-[550px] mx-auto md:ml-auto md:mr-0 md:translate-y-[80px] maxibon-img-5'
+                    className: 'w-full max-w-[550px] mx-auto md:ml-auto md:mr-0 md:translate-y-[80px] [@media(min-width:1440px)]:translate-y-[40px] maxibon-img-5'
                 },
             ],
             className: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 mb-32 items-start maxibon-grid-bottom'
@@ -390,8 +390,8 @@ export const projects: Project[] = [
             overview: 'Un despliegue BTL integral combinando diseño y producción de campo. Desarrollamos el "Manual del Ciclista", infografías y stands interactivos en esquinas clave. En paralelo, resolvimos la infraestructura de las guarderías: desde el modelado 3D de los módulos hasta el montaje y la operación durante los partidos.',
             tags: ['ACTIVATION', 'STREET MARKETING']
         },
-        gallery: [{ type: 'text', title: 'THE IDEA:', text: 'Actuar directamente sobre el asfalto. Para educar, creamos "La Ciudad necesita tu ayuda", interceptando vecinos con experiencias lúdicas. Para incentivar, pasamos a la acción: conceptualizamos y diseñamos las primeras guarderías temporales y gratuitas de bicicletas para estadios de fútbol.', className: 'lg-text-idea !py-4' },
-        { type: 'full', aspect: 'aspect-auto', src: `${b('ba', 'transito')}/gallery_detail/gallery_row-1_1x_f` },
+        gallery: [{ type: 'text', title: 'THE IDEA:', text: 'Actuar directamente sobre el asfalto. Para educar, creamos "La Ciudad necesita tu ayuda", interceptando vecinos con experiencias lúdicas. Para incentivar, pasamos a la acción: conceptualizamos y diseñamos las primeras guarderías temporales y gratuitas de bicicletas para estadios de fútbol.', className: 'lg-text-idea !py-4 [@media(min-width:1440px)]:!py-12' },
+        { type: 'full', aspect: 'aspect-auto', src: `${b('ba', 'transito')}/gallery_detail/gallery_row-1_1x_f`, className: '[@media(min-width:1440px)]:!my-12' },
 
         {
             type: 'custom',
@@ -399,7 +399,7 @@ export const projects: Project[] = [
                 // Imagen Izquierda: Control total con 'translate-y'
                 {
                     src: `${b('ba', 'transito')}/gallery_detail/gallery_half-2_1x`,
-                    className: 'w-full max-w-[450px] mx-auto md:ml-auto md:mr-0 md:translate-y-[20px]'
+                    className: 'w-full max-w-[450px] mx-auto md:ml-auto md:mr-0 md:translate-y-[20px] [@media(min-width:1440px)]:translate-y-0 [@media(min-width:1440px)]:self-center'
                 },
                 // Imagen Derecha: Le sacamos el 'my-auto' para que se quede anclada arriba
                 {
@@ -407,19 +407,19 @@ export const projects: Project[] = [
                     className: 'w-full max-w-[480px] mx-auto md:mr-auto md:ml-0 my-auto ba-img-1'
                 },
             ],
-            className: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 mb-0 md:mb-0 lg:mb-12 items-start ba-grid-top',
+            className: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 mb-0 md:mb-0 lg:mb-12 [@media(min-width:1440px)]:mb-8 items-start ba-grid-top',
             //overlayText: 'LA CIUDAD\nNECESITA TU AYUDA',
             overlayClassName: 'absolute bottom-[0%] left-3/4 -translate-x-1/2 z-10',
             overlayTextClassName: '-rotate-[4deg] text-center'
         },
-        { type: 'text', title: 'OUTCOME:', text: 'Impacto tangible en la vía pública. Transformamos normas de tránsito duras en experiencias ciudadanas amigables y le dimos una solución segura a miles de hinchas. Demostramos que el diseño estratégico, sumado a una ejecución impecable, logra cambiar hábitos en la ciudad.', className: 'lg-text-outcome !py-4' },
-        { type: 'full', aspect: 'aspect-auto', src: `${b('ba', 'transito')}/gallery_detail/gallery_row-3_1x_h` },
+        { type: 'text', title: 'OUTCOME:', text: 'Impacto tangible en la vía pública. Transformamos normas de tránsito duras en experiencias ciudadanas amigables y le dimos una solución segura a miles de hinchas. Demostramos que el diseño estratégico, sumado a una ejecución impecable, logra cambiar hábitos en la ciudad.', className: 'lg-text-outcome !py-4 [@media(min-width:1440px)]:!py-12' },
+        { type: 'full', aspect: 'aspect-auto', src: `${b('ba', 'transito')}/gallery_detail/gallery_row-3_1x_h`, className: '[@media(min-width:1440px)]:!pt-8' },
         {
             type: 'custom',
             src: [
                 {
                     src: `${b('ba', 'transito')}/gallery_detail/gallery_half-5_1x`,
-                    className: 'w-full max-w-[490px] mx-auto md:mr-auto md:translate-y-[20px] ba-img-5'
+                    className: 'w-full max-w-[490px] mx-auto md:mr-auto md:translate-y-[20px] [@media(min-width:1440px)]:translate-y-0 [@media(min-width:1440px)]:self-center ba-img-5'
                 },
                 {
                     src: `${b('ba', 'transito')}/gallery_detail/gallery_half-4_1x.webp`,
@@ -428,7 +428,7 @@ export const projects: Project[] = [
                     className: 'w-full max-w-[550px] mx-auto md:ml-auto md:mr-0 md:translate-y-[0px]'
                 },
             ],
-            className: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 mb-0 items-start ba-grid-bottom'
+            className: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 mb-0 [@media(min-width:1440px)]:mt-12 items-start ba-grid-bottom'
         },
         { type: 'full', aspect: 'aspect-auto', src: `${b('ba', 'transito')}/gallery_detail/gallery_row-4_1x_f` },
         ],

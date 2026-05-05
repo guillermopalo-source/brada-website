@@ -195,10 +195,10 @@ export default function WorkPage() {
                         { title: '↘ [Doritos]', to: `/${l}/work/doritos`, img: '/work_id/doritos/projects/campania/work_page/doritos_campania_thumb', video: "/work_id/doritos/projects/campania/gallery_detail/gallery_doritos-1" },
                         { title: '↘ [Cash App]', to: `/${l}/work/cash-app`, img: '/work_id/cashapp/projects/advertising/work_page/cashapp_campania_thumb', video: "/work_id/cashapp/projects/advertising/work_page/gallery_cashapp-2" },
                         { title: '↘ [Zonaprop]', to: `/${l}/work/zonaprop`, img: '/work_id/zona_prop/projects/entrevistas_clientes/work_page/zonajobs_work_id-1400', comingSoon: true },
-                        { title: '↘ [CAV SBK]', to: `/${l}/work/cav-sbk`, img: '/work_id/cavsbk/projects/brand_identity/gallery_detail/cav-2_low' },
-                        { title: '↘ [Menant]', to: `/${l}/work/menant`, img: '/work_id/menant/projects/branding/work_page/menant_gallery' },
+                        { title: '↘ [CAV SBK]', to: `/${l}/work/cav-sbk`, img: '/work_id/cavsbk/projects/brand_identity/gallery_detail/cav-2_low', comingSoon: true },
+                        { title: '↘ [Menant]', to: `/${l}/work/menant`, img: '/work_id/menant/projects/branding/work_page/menant_gallery', comingSoon: true },
                         { title: '↘ [Alto Palermo]', to: `/${l}/work/alto-palermo`, img: '/work_id/alto_palermo/projects/mujeres_bici/gallery_detail/alto_palermo_mujeres-thmb' },
-                        { title: '↘ [Luxora]', to: `/${l}/work/luxora`, img: '/work_id/luxora/projects/brand_identity/gallery_detail/Luxora_logo-1' },
+                        { title: '↘ [Luxora]', to: `/${l}/work/luxora`, img: '/work_id/luxora/projects/brand_identity/gallery_detail/Luxora_logo-1', comingSoon: true },
                         { title: '↘ [Itaú Bank]', to: `/${l}/work/itau-bank`, img: '/work_id/itau/projects/cx_day/work_page/gallery_itau-1' },
                         { title: '↘ [Banco Hipotecario]', to: `/${l}/work/banco-hipotecario`, img: '/work_id/hipotecario/projects/graphic_design/work_page/hipotecario_low' },
                     ].map((item) => (
@@ -236,16 +236,16 @@ export default function WorkPage() {
             <section className="hidden lg:block relative w-full py-40 lg:py-28 xl:py-40 bg-background overflow-hidden">
                 <div className="max-w-[1440px] mx-auto px-[30px] flex flex-col gap-32 relative">
                     <div className="w-full flex justify-start pl-[5%] -mt-[-35px] lg:mt-8 xl:-mt-[-35px]">
-                        <VerticalItem title="↘ [CAV SBK] BRAND IDENTITY" w="498px" h="278px" to={`/${l}/work/cav-sbk`} img="/work_id/cavsbk/projects/brand_identity/gallery_detail/cav-2_low.avif" setHover={setIsHovering} />
+                        <VerticalItem title="↘ [CAV SBK] BRAND IDENTITY" w="498px" h="278px" to={`/${l}/work/cav-sbk`} img="/work_id/cavsbk/projects/brand_identity/gallery_detail/cav-2_low" setHover={setIsHovering} comingSoon />
                     </div>
                     <div className="w-full flex justify-end pr-[5%] -mt-[250px] lg:-mt-[40px] xl:-mt-[250px]">
-                        <VerticalItem title="↘ [Menant] BRAND IDENTITY" w="423px" h="423px" to={`/${l}/work/menant`} img="/work_id/menant/projects/branding/work_page/menant_gallery.avif" setHover={setIsHovering} />
+                        <VerticalItem title="↘ [Menant] BRAND IDENTITY" w="423px" h="423px" to={`/${l}/work/menant`} img="/work_id/menant/projects/branding/work_page/menant_gallery" setHover={setIsHovering} comingSoon />
                     </div>
                     <div className="w-full flex justify-start pl-[5%] lg:pl-[5%] xl:pl-[10%] -mt-[140px] lg:mt-4 xl:-mt-[140px]">
-                        <VerticalItem title="↘ [Alto Palermo] EVENT IN-SITE" w="450px" h="300px" to={`/${l}/work/alto-palermo`} img="/work_id/alto_palermo/projects/mujeres_bici/gallery_detail/alto_palermo_mujeres-thmb.avif" setHover={setIsHovering} />
+                        <VerticalItem title="↘ [Alto Palermo] EVENT IN-SITE" w="450px" h="300px" to={`/${l}/work/alto-palermo`} img="/work_id/alto_palermo/projects/mujeres_bici/gallery_detail/alto_palermo_mujeres-thmb" setHover={setIsHovering} />
                     </div>
                     <div ref={lastProjectRef} className="w-full flex justify-start pl-[52%] -mt-[1px]">
-                        <VerticalItem title="↘ [Luxora] BRAND IDENTITY" w="350px" h="350px" to={`/${l}/work/luxora`} img="/work_id/luxora/projects/brand_identity/gallery_detail/Luxora_logo-1.avif" setHover={setIsHovering} />
+                        <VerticalItem title="↘ [Luxora] BRAND IDENTITY" w="350px" h="350px" to={`/${l}/work/luxora`} img="/work_id/luxora/projects/brand_identity/gallery_detail/Luxora_logo-1" setHover={setIsHovering} comingSoon />
                     </div>
                 </div>
             </section>
@@ -282,6 +282,7 @@ interface VerticalItemProps {
     h: string;
     title?: string;
     setHover: (isHovering: boolean) => void;
+    comingSoon?: boolean;
 }
 
 // --- COMPONENTES ---
@@ -495,25 +496,58 @@ function WorkItem({ left, lgLeft, top, w, h, lgW, lgH, to, video, img, speed, ti
     );
 }
 
-function VerticalItem({ to, video, img, w, h, title, setHover }: VerticalItemProps) {
+function VerticalItem({ to, video, img, w, h, title, setHover, comingSoon }: VerticalItemProps) {
     const mediaRef = useRef<HTMLVideoElement | HTMLImageElement>(null);
+    const comingSoonContainerRef = useRef<HTMLDivElement>(null);
+    const [hovered, setHovered] = useState(false);
 
     const handleMouseEnter = () => {
         setHover(true);
+        setHovered(true);
         if (video && mediaRef.current instanceof HTMLVideoElement) {
             mediaRef.current.play().catch(() => { });
         }
     };
 
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!comingSoon) return;
+        const { currentTarget, clientX, clientY } = e;
+        const { left, top, width, height } = currentTarget.getBoundingClientRect();
+        const x = (clientX - (left + width / 2)) / (width / 2);
+        const y = (clientY - (top + height / 2)) / (height / 2);
+        // Pequeño efecto parallax opcional si se desea, por ahora solo para el cursor
+        if (mediaRef.current) {
+            gsap.to(mediaRef.current, { x: x * 10, y: y * 10, duration: 0.6, ease: "power2.out" });
+        }
+    };
+
     const handleMouseLeave = () => {
         setHover(false);
+        setHovered(false);
         if (video && mediaRef.current instanceof HTMLVideoElement) {
             mediaRef.current.pause();
             mediaRef.current.currentTime = 0;
         }
+        if (mediaRef.current) {
+            gsap.to(mediaRef.current, { x: 0, y: 0, duration: 0.8, ease: "power3.out" });
+        }
     };
 
     const mediaClasses = "w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105";
+
+    const cardContent = (
+        <div className="group block w-full h-full relative overflow-hidden">
+            {video ? (
+                <MediaRenderer ref={mediaRef} src={video} className={mediaClasses} />
+            ) : img ? (
+                <MediaRenderer ref={mediaRef} src={img} alt={`${title || 'Work'} thumbnail`} className={mediaClasses} />
+            ) : null}
+
+            {comingSoon && (
+                <ComingSoonCursor containerRef={comingSoonContainerRef} visible={hovered} />
+            )}
+        </div>
+    );
 
     return (
         <div className="relative block" style={{ width: w, height: h }}>
@@ -522,18 +556,26 @@ function VerticalItem({ to, video, img, w, h, title, setHover }: VerticalItemPro
                     {formatTitle(title)}
                 </h3>
             )}
-            <Link
-                to={to}
-                className="group block w-full h-full relative overflow-hidden"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-            >
-                {video ? (
-                    <video ref={mediaRef as React.RefObject<HTMLVideoElement>} src={video} muted loop playsInline className={mediaClasses} />
-                ) : (
-                    <img ref={mediaRef as React.RefObject<HTMLImageElement>} src={img} alt={`${title || 'Work'} thumbnail`} className={mediaClasses} />
-                )}
-            </Link>
+            {comingSoon ? (
+                <div 
+                    ref={comingSoonContainerRef}
+                    className="w-full h-full cursor-none" 
+                    onMouseEnter={handleMouseEnter} 
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    {cardContent}
+                </div>
+            ) : (
+                <Link
+                    to={to}
+                    className="w-full h-full"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    {cardContent}
+                </Link>
+            )}
         </div>
     );
 }
@@ -551,6 +593,7 @@ function MobileWorkCard({ item }: { item: MobileWorkCardItem }) {
     const [hovered, setHovered] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
     const imgRef = useRef<HTMLImageElement>(null);
+    const comingSoonContainerRef = useRef<HTMLDivElement>(null);
 
     const handleMouseEnter = () => {
         setHovered(true);
@@ -587,7 +630,8 @@ function MobileWorkCard({ item }: { item: MobileWorkCardItem }) {
             </h3>
 
             <div
-                className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900"
+                ref={comingSoonContainerRef}
+                className={`relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 ${item.comingSoon ? 'cursor-none' : ''}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
@@ -609,25 +653,7 @@ function MobileWorkCard({ item }: { item: MobileWorkCardItem }) {
                 )}
 
                 {item.comingSoon && (
-                    <div
-                        className="absolute inset-0 flex items-center justify-center z-10"
-                        style={{
-                            opacity: hovered ? 1 : 0,
-                            transition: 'opacity 0.35s ease',
-                            background: 'rgba(0,0,0,0.55)',
-                        }}
-                    >
-                        <span style={{
-                            fontFamily: 'Inter, sans-serif',
-                            fontWeight: 800,
-                            fontSize: '1.1rem',
-                            letterSpacing: '0.18em',
-                            textTransform: 'uppercase',
-                            color: '#fff',
-                        }}>
-                            Coming Soon
-                        </span>
-                    </div>
+                    <ComingSoonCursor containerRef={comingSoonContainerRef} visible={hovered} />
                 )}
             </div>
         </div>
