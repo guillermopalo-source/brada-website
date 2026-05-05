@@ -3,7 +3,7 @@ import ScrollReveal from '@/components/custom/ScrollReveal';
 export default function ProjectSidebar({ project }: { project: any }) {
     if (!project) return null;
     return (
-        <div className="flex flex-col gap-8 bg-transparent text-left py-12 lg:py-0 lg-sidebar-content">
+        <div className="flex flex-col gap-6 md:gap-8 bg-transparent text-left py-12 lg:py-0 lg-sidebar-content">
             <style>{`
                 @media (min-width: 1024px) and (max-width: 1279px) {
                     .lg-sidebar-content {
@@ -112,7 +112,7 @@ export default function ProjectSidebar({ project }: { project: any }) {
                         <span className="text-foreground font-medium text-sm md:text-base tracking-wide border-b border-foreground/30 pb-1 w-fit mb-1">
                             Project brief
                         </span>
-                        <p className="text-foreground/70 text-sm md:text-[0.95rem] leading-snug">
+                        <p className="text-foreground/70 text-sm md:text-[0.95rem] leading-normal">
                             {project.sidebar.brief}
                         </p>
                     </div>
@@ -126,7 +126,7 @@ export default function ProjectSidebar({ project }: { project: any }) {
                         <span className="text-foreground font-medium text-sm md:text-base tracking-wide border-b border-foreground/30 pb-1 w-fit mb-1">
                             Overview
                         </span>
-                        <p className="text-foreground/70 text-sm md:text-[0.95rem] leading-snug">
+                        <p className="text-foreground/70 text-sm md:text-[0.95rem] leading-normal">
                             {project.sidebar.overview}
                         </p>
                     </div>

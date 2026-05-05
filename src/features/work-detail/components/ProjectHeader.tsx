@@ -12,7 +12,7 @@ export default function ProjectHeader({ project }: { project: any }) {
                         )}
                     </span>
                 </h1>
-                <p className="page-enter text-black dark:text-brada-light/70 text-base sm:text-lg md:text-lg lg:text-base xl:text-xl max-w-4xl leading-[1.1] tracking-wide transition-colors duration-500 whitespace-pre-line">
+                <p className="page-enter text-black dark:text-brada-light/70 text-base sm:text-lg md:text-lg lg:text-base xl:text-xl max-w-4xl leading-normal tracking-wide transition-colors duration-500 whitespace-pre-line">
                     {project.description}
                 </p>
             </div>

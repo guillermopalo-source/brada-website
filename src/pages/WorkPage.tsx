@@ -125,13 +125,13 @@ export default function WorkPage() {
             {/* --- HEADER FIJO (Logo + Filtros) — fuera del containerRef para evitar que transforms de GSAP rompan fixed positioning --- */}
             <div
                 ref={headerRef}
-                className="fixed top-0 left-0 right-0 mx-auto w-full max-w-[1440px] z-50 pointer-events-none opacity-0"
+                className="fixed top-[20px] left-0 right-0 mx-auto w-full max-w-[1440px] z-50 pointer-events-none opacity-0"
                 style={{ filter: "blur(12px)" }}
             >
-                <div className="w-full px-[16px] sm:px-[24px] md:px-[30px] pt-[25px] flex justify-between items-center">
-                    <div className="pointer-events-auto w-32 md:w-40 lg:w-32 xl:w-40">
+                <div className="w-full h-auto pt-[25px] pb-[15px] md:py-[25px] px-[16px] sm:px-[24px] md:px-[30px] flex items-center justify-start md:justify-between">
+                    <div className="pointer-events-auto">
                         <Link to="/" aria-label="Home">
-                            <SecondaryBradaLogo className="w-full h-auto object-contain transition-all duration-500 text-black dark:text-brada-light" />
+                            <SecondaryBradaLogo className="w-[150px] md:w-[180px] h-auto object-contain transition-all duration-500 text-black dark:text-brada-light" />
                         </Link>
                     </div>
                     <nav ref={filtersRef} className="pointer-events-auto hidden lg:flex flex-1 justify-center">
@@ -143,7 +143,7 @@ export default function WorkPage() {
                             <li className="hover:text-foreground cursor-pointer transition-colors leading-none">Creative Direction</li>
                         </ul>
                     </nav>
-                    <div className="w-32 md:w-40 lg:w-32 xl:w-40 flex justify-end"></div>
+                    <div className="hidden md:flex w-32 md:w-40 lg:w-32 xl:w-40 justify-end"></div>
                 </div>
             </div>
 
@@ -156,8 +156,8 @@ export default function WorkPage() {
                 </Helmet>
 
                 {/* --- HERO --- */}
-            <section className="min-h-screen w-full flex flex-col justify-start overflow-hidden bg-transparent">
-                <div className="relative z-10 w-full pt-[180px] pb-0 max-w-[1600px]">
+            <section className="min-h-[70vh] md:min-h-screen w-full flex flex-col justify-start overflow-hidden bg-transparent">
+                <div className="relative z-10 w-full pt-[140px] md:pt-[180px] pb-0 max-w-[1600px]">
                     <div className="flex flex-col">
                         <h1 className="text-black dark:text-brada-light font-inter font-extrabold tracking-tighter leading-[1.1] uppercase">
                             <span className="page-enter block leading-[1] text-[clamp(2.8rem,7.2vw,7.2rem)]">
@@ -182,10 +182,10 @@ export default function WorkPage() {
                     </div>
                 </div>
             </section>
-
+ 
             {/* --- MOBILE & TABLET GRID (< lg) --- */}
-            <section className="lg:hidden w-full pt-4 md:pt-0 md:-mt-36 pb-20 bg-background">
-                <div className="px-[10px] md:px-[5px] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-8 md:gap-y-10 max-w-[1750px] mx-auto">
+            <section className="lg:hidden w-full pt-4 -mt-4 md:mt-0 md:-mt-36 pb-12 bg-background">
+                <div className="px-0 md:px-[5px] grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-x-8 md:gap-y-10 max-w-[1750px] mx-auto">
                     {[
                         { title: '↘ [Lemon Cash] PAGO CON QR CASHBACK', to: `/${l}/work/lemon-cash`, img: '/work_id/lemon/projects/campania_qr/work_page/lemon_campania_qr_thumb.avif', video: "/work_id/lemon/projects/campania_qr/more_works/lemon_loop_mw-wp.mp4" },
                         { title: '↘ [Converse All Stars]', to: `/${l}/work/converse-all-stars`, img: '/work_id/converse/projects/all_stars/work_page/converse_all_stars_thumb.avif' },
@@ -582,9 +582,9 @@ function MobileWorkCard({ item }: { item: MobileWorkCardItem }) {
     };
 
     const cardContent = (
-        <div className="flex flex-col gap-3 group">
-            {/* Title Above (Tablet/Desktop style) */}
-            <h3 className="hidden md:block text-[10px] lg:text-[11px] font-inter font-bold uppercase tracking-[0.05em] text-black/40 dark:text-brada-light/40 transition-colors group-hover:text-foreground">
+        <div className="flex flex-col gap-3 group pb-10 md:pb-0">
+            {/* Title Above (Standardized for Mobile and Tablet) */}
+            <h3 className="px-4 md:px-0 text-[10px] sm:text-[11px] font-inter font-bold uppercase tracking-[0.05em] text-black/40 dark:text-brada-light/40 transition-colors group-hover:text-foreground">
                 {formatTitle(item.title)}
             </h3>
 
@@ -601,7 +601,7 @@ function MobileWorkCard({ item }: { item: MobileWorkCardItem }) {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Video layer (only for tablet/desktop hover) */}
+                {/* Video layer (only for hover) */}
                 {item.video && (
                     <video
                         ref={videoRef}
@@ -612,14 +612,6 @@ function MobileWorkCard({ item }: { item: MobileWorkCardItem }) {
                         className="absolute inset-0 w-full h-full object-cover opacity-0 transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                     />
                 )}
-
-                {/* Mobile Overlay (hidden on tablet) */}
-                <div className="md:hidden absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="md:hidden absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-brada-light font-inter font-bold text-lg uppercase tracking-tight leading-tight">
-                        {formatTitle(item.title)}
-                    </h3>
-                </div>
 
                 {item.comingSoon && (
                     <div

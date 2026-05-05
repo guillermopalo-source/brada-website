@@ -116,7 +116,7 @@ const WorkGrid = () => {
     return (
         <section
             id="workgrid"
-            className="relative w-full bg-transparent mt-[120px] md:mt-[160px] pb-18 sm:pb-20 lg:pb-24"
+            className="relative w-full bg-transparent mt-[70px] md:mt-[160px] pb-18 sm:pb-20 lg:pb-24"
         >
             <div className="w-full">
 

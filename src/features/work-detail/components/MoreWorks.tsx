@@ -60,7 +60,7 @@ function ViewCaseCursor({
     }, [sectionRef]);
 
     return (
-        <div ref={cursorRef} className="absolute top-0 left-0 pointer-events-none"
+        <div ref={cursorRef} className="absolute top-0 left-0 pointer-events-none hidden md:block"
             style={{ transform: 'translate(-50%,-50%)', opacity: 0, zIndex: 200, mixBlendMode: 'difference' }}>
             <span
                 className="select-none font-inter-tight block whitespace-nowrap"
@@ -322,6 +322,36 @@ export default function MoreWorks({ currentSlug }: Props) {
             tl.to(slot2Card, { x: slotX(1, cw), duration: 0.5, ease: 'power3.out' }, 0);
         }
     }, [getSlot, total, slotX]);
+
+    const touchStartX = useRef<number>(0);
+
+    useEffect(() => {
+        const el = sectionRef.current;
+        if (!el) return;
+
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartX.current = e.touches[0].clientX;
+        };
+
+        const handleTouchEnd = (e: TouchEvent) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX.current - touchEndX;
+
+            // Swipe threshold of 50px
+            if (diff > 50) {
+                const nextSlotIdx = (offsetRef.current + 1) % total;
+                advance(nextSlotIdx);
+            }
+        };
+
+        el.addEventListener('touchstart', handleTouchStart);
+        el.addEventListener('touchend', handleTouchEnd);
+
+        return () => {
+            el.removeEventListener('touchstart', handleTouchStart);
+            el.removeEventListener('touchend', handleTouchEnd);
+        };
+    }, [advance, total]);
 
     // ─── Event handlers ───────────────────────────────────────────────────
     const handleMouseEnter = useCallback((i: number) => {

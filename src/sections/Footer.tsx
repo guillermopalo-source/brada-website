@@ -38,7 +38,7 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="relative w-full pt-8 md:pt-0 lg:pt-32 xl:pt-48 pb-0 bg-transparent font-['Inter_Tight']"
+      className="relative w-full pt-8 md:pt-16 lg:pt-32 xl:pt-48 pb-0 bg-transparent font-['Inter_Tight']"
     >
       <div className="w-full">
 
@@ -52,7 +52,7 @@ const Footer = () => {
               className="transition-opacity duration-300 focus:outline-none text-brada-light [.light_&]:text-black"
               aria-label="Back to top"
             >
-              <GetInTouchLogo className="transition-all duration-500" />
+              <GetInTouchLogo className="w-[85vw] md:w-auto h-auto transition-all duration-500" />
             </button>
           </div>
 
@@ -149,14 +149,15 @@ const Footer = () => {
         </div>
 
         {/* 2. Sub-footer (Bottom Layout) */}
-        <div className={`mt-12 md:mt-32 pt-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 transition-all duration-1000 ease-driftime delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`mt-12 md:mt-32 pt-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-2 md:gap-8 transition-all duration-1000 ease-driftime delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
           {/* Left: Location & Copyright */}
-          <div className="flex flex-col gap-0.5">
-            <p className="text-[#999999] text-[13px] leading-[1.2]">
-              <span className="uppercase tracking-wide">BA - SYD <span className="italic font-serif">TO</span> WORLDWIDE.</span>
-              <span className="md:hidden"> • </span>
-              <span className="block md:inline">© Copyright Brada™Agency 2026. Steal is bad karma.</span>
+          <div className="flex flex-col gap-0 leading-[1.2]">
+            <p className="text-[#999999] text-[13px] uppercase tracking-wide">
+              BA - SYD <span className="italic font-serif">TO</span> WORLDWIDE.
+            </p>
+            <p className="text-[#999999] text-[13px]">
+              © Copyright Brada™Agency 2026. Steal is bad karma.
             </p>
           </div>
 

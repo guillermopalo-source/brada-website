@@ -54,12 +54,12 @@ const Skills = () => {
       className="relative w-full pt-12 pb-24 sm:pt-20 sm:pb-32 bg-transparent overflow-hidden"
     >
       <div className="w-full relative z-10 transition-colors duration-500 ease-expo-out">
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-start md:items-center">
 
           {/* Header Node */}
           <ScrollReveal>
             <div className="relative mb-16 md:mb-24">
-              <div className="relative flex items-center justify-center pt-8 pb-6 px-12">
+              <div className="relative flex items-start justify-start md:items-center md:justify-center pt-8 pb-6 px-4 md:px-12">
                 {/* Image Background */}
                 <img
                   src="/images/skills_img/resaltar_skills.png"
@@ -110,10 +110,10 @@ const Skills = () => {
             </ScrollReveal>
 
             {/* 4 Column Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 px-0 mt-[48px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 px-4 md:px-0 mt-[48px]">
               {skillCategories.map((category, index) => (
                 <ScrollReveal key={category.title} delay={index * 100}>
-                  <div className="flex flex-col items-center space-y-4">
+                  <div className="flex flex-col items-start md:items-center space-y-4">
 
                     {/* Title Image — natural size, no filters, container matches image proportions */}
                     <img

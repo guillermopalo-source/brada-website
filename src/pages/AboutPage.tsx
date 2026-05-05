@@ -23,18 +23,18 @@ const AboutPage = () => {
                         <section className="flex flex-col w-full">
                             <div className="flex flex-col gap-0">
                                 <div className="mb-1 sm:mb-2">
-                                    <h1 className="text-foreground font-inter font-extrabold text-[2.5rem] sm:text-[3.15rem] md:text-[3.8rem] lg:text-[5.15rem] xl:text-[6.8rem] tracking-tight leading-[0.95] uppercase">
-                                        <span className="page-enter block tracking-tight">MORE THAN</span>
-                                        <span className="page-enter block tracking-tight">CREATIVE <span className="inline-block">—</span> <span className="font-garamond italic font-normal normal-case tracking-normal text-[1.3em]">cultural.</span></span>
-                                        <span className="page-enter block tracking-tight -mt-1 sm:-mt-2 md:-mt-3">ONE CREW. ALL IN.</span>
+                                    <h1 className="text-foreground font-inter font-extrabold tracking-tighter leading-[1.1] uppercase">
+                                        <span className="page-enter block text-[clamp(2.8rem,7.2vw,7.2rem)] tracking-tight">MORE THAN</span>
+                                        <span className="page-enter block text-[clamp(2.8rem,7.2vw,7.2rem)] tracking-tight">CREATIVE <span className="inline-block">—</span> <span className="font-garamond italic font-normal normal-case tracking-normal text-[clamp(3.6rem,11vw,9.8rem)]">cultural.</span></span>
+                                        <span className="page-enter block text-[clamp(2.8rem,7.2vw,7.2rem)] tracking-tight -mt-1 sm:-mt-2 md:-mt-3">ONE CREW. ALL IN.</span>
                                     </h1>
                                 </div>
-                                <div className="page-enter max-w-2xl text-foreground/70 text-base sm:text-lg md:text-xl leading-relaxed mb-4">
+                                <div className="page-enter max-w-2xl text-foreground/70 text-base sm:text-lg md:text-xl leading-[1.1] mb-4">
                                     <p>No solo somos proveedores. Somos los que están cuando hay que estar, <br className="hidden md:block" />un verdadero hermano.</p>
                                 </div>
                             </div>
                             {/* Hero Banner Image */}
-                            <div className="relative left-1/2 -translate-x-1/2 w-screen max-w-none outline-none mt-4 md:mt-6 mb-24 md:mb-0 lg:-mb-12 xl:mb-32">
+                            <div className="relative left-1/2 -translate-x-1/2 w-screen max-w-none outline-none mt-4 md:mt-6 mb-4 md:mb-0 lg:-mb-12 xl:mb-32">
                                 <picture>
                                     <source srcSet="/images/about/hero_about.avif" type="image/avif" />
                                     <source srcSet="/images/about/hero_about.webp" type="image/webp" />

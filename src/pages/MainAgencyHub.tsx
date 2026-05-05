@@ -37,7 +37,7 @@ const MainAgencyHub = () => {
 
             <InteractiveSkills />
 
-            <div className="relative left-1/2 -translate-x-1/2 w-screen max-w-none overflow-hidden py-0 md:py-4 md:-mt-12 lg:-mt-20 lg:py-2 min-[1440px]:-mt-16 min-[1440px]:py-4">
+            <div className="relative left-1/2 -translate-x-1/2 w-screen max-w-none overflow-hidden pt-[50px] pb-0 md:py-4 md:-mt-12 lg:-mt-20 lg:py-2 min-[1440px]:-mt-16 min-[1440px]:py-4">
                 <Marquee />
             </div>
 

@@ -85,13 +85,13 @@ const RootLayout = () => {
             {/* 3. LOGO FIJO GLOBAL EN EL DOM SIEMPRE (GSAP autoAlpha maneja la visibilidad y pointer-events) */}
             <div
                 ref={globalLogoRef}
-                className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] z-50"
+                className="fixed top-[20px] z-50 left-0 translate-x-0 w-full md:left-1/2 md:-translate-x-1/2 md:max-w-[1440px]"
                 style={{ visibility: 'hidden', opacity: 0, filter: "blur(12px)" }} // Previene parpadeos en la carga
             >
-                <div className="w-full px-[30px] pt-[25px] flex justify-between items-center">
+                <div className="w-full h-auto pt-[25px] pb-[15px] md:py-[25px] px-[16px] sm:px-[24px] md:px-[30px] flex items-center justify-start md:justify-between">
                     <div className="pointer-events-auto">
                         <Link to="/" aria-label="Home">
-                            <SecondaryBradaLogo className="w-30 md:w-40 h-auto object-contain transition-all duration-500 text-black dark:text-brada-light" />
+                            <SecondaryBradaLogo className="w-[150px] md:w-[180px] h-auto object-contain transition-all duration-500 text-black dark:text-brada-light" />
                         </Link>
                     </div>
                 </div>

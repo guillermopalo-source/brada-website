@@ -126,8 +126,17 @@ export default function GalleryInteractiveVideo({ src, thumb, loop, aspect }: Ga
             if (e.key === 'Escape' && isPlaying) setIsPlaying(false);
         };
         window.addEventListener('keydown', onKey);
+
+        // Mobile autoplay loop logic
+        const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+        if (isMobile && loop && loopRef.current) {
+            loopRef.current.play().catch(() => { });
+            gsap.set(loopRef.current, { opacity: 1 });
+            if (imgRef.current) gsap.set(imgRef.current, { opacity: 0 });
+        }
+
         return () => window.removeEventListener('keydown', onKey);
-    }, [isPlaying]);
+    }, [isPlaying, loop]);
 
     // If there is no thumb or loop, the main video poster is enough, 
     // but the hover logic will just show the Watch cursor on the static poster.

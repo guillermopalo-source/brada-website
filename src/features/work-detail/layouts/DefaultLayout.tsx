@@ -102,7 +102,7 @@ export default function DefaultLayout({ project }: { project: any }) {
 
                         {project.heroWideImage ? (
                             <ScrollReveal delay={200}>
-                                <div ref={heroRef} className="relative left-1/2 -translate-x-1/2 w-screen max-w-none outline-none mt-4 md:mt-6 mb-24 md:mb-32 lg-hero-wide-container">
+                                <div ref={heroRef} className="relative left-1/2 -translate-x-1/2 w-screen max-w-none outline-none mt-4 md:mt-6 mb-10 md:mb-32 lg-hero-wide-container">
                                     <picture style={{ display: 'contents' }}>
                                         <source srcSet={`${project.heroWideImage}.avif`} type="image/avif" />
                                         <source srcSet={`${project.heroWideImage}.webp`} type="image/webp" />

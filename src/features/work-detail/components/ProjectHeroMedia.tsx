@@ -79,6 +79,13 @@ export default function ProjectHeroMedia({ project }: { project: any }) {
     const containerRef = useRef<HTMLDivElement>(null);
     const imgRef = useRef<HTMLImageElement>(null);
     const loopRef = useRef<HTMLVideoElement>(null);
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Evitar renderizados nulos si falta info crucial
     if (!project.mainVideo && !project.galleryThumb && !project.autoPlayHero && !project.mainImage) return null;
@@ -129,10 +136,7 @@ export default function ProjectHeroMedia({ project }: { project: any }) {
     }, [isPlaying]);
 
     // ─── RENDERIZADO BIFURCADO ───
-
-    // ESCENARIO 1: AUTO-PLAY SILENCIOSO (Converse)
-    // Se ejecuta de manera aislada y cruda para evitar que los eventos de React interfieran con el autoplay del navegador.
-    if (project.autoPlayHero && project.galleryLoop) {
+    if ((project.autoPlayHero || (isMobile && project.galleryLoop)) && project.galleryLoop) {
         return (
             <ScrollReveal delay={300}>
                 <div className="relative w-full overflow-hidden bg-black rounded-3xl aspect-video pointer-events-none select-none">

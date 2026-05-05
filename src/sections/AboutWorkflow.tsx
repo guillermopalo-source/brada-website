@@ -115,7 +115,7 @@ const AboutWorkflow = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="relative w-full pt-8 md:pt-0 md:-mt-24 lg:pt-40 pb-24 md:pb-0 lg:pb-4 xl:pb-32 bg-transparent page-enter"
+      className="relative w-full pt-6 md:pt-0 md:-mt-24 lg:pt-40 pb-24 md:pb-0 lg:pb-4 xl:pb-32 bg-transparent page-enter"
     >
       <div className="w-full">
         <div>
@@ -127,7 +127,7 @@ const AboutWorkflow = () => {
 
             {/* — Header: Workflow title + fire + crowd — */}
             <ScrollReveal start="top 96%">
-              <div className="flex flex-col max-[900px]:flex-col min-[900px]:flex-row items-start gap-2 md:gap-6 lg:gap-6 mb-6 md:mt-8 lg:-mt-8">
+              <div className="flex flex-col max-[900px]:flex-col min-[900px]:flex-row items-start gap-10 md:gap-6 lg:gap-6 mb-6 md:mt-8 lg:-mt-8">
                 {/* Crowd image — above on mobile, right on desktop */}
                 <div className="w-full min-[900px]:w-1/2 min-[900px]:ml-auto shrink-0 order-first min-[900px]:order-last max-h-[340px] md:max-h-none overflow-hidden flex items-center justify-center md:py-8 lg:py-0">
                   <video
@@ -151,7 +151,7 @@ const AboutWorkflow = () => {
                     <img src="/assets/fire.gif" alt="fire" className="w-[3.5rem] sm:w-[5rem] md:w-[3.8rem] lg:w-[3.2rem] xl:w-[5rem] h-[3.5rem] sm:h-[5rem] md:h-[3.8rem] lg:h-[3.2rem] xl:h-[5rem] object-contain select-none" />
                   </div>
                   {/* Subtitle */}
-                  <p className="text-foreground font-inter font-light text-xl md:text-lg lg:text-xl leading-tight md:leading-normal lg:leading-tight max-w-sm -mt-3 tracking-wide pl-6 md:pl-0 lg:pl-6">
+                  <p className="text-foreground font-inter font-light text-xl md:text-lg lg:text-xl leading-tight md:leading-normal lg:leading-tight max-w-sm -mt-3 tracking-wide pl-0 md:pl-0 lg:pl-6">
                     Del brief al <span className="font-accent text-3xl md:text-2xl lg:text-3xl">WOW MOMENT!</span><br />
                     Cada idea es una mecha y<br />nosotros sabemos cómo encenderla.
                   </p>
@@ -160,7 +160,7 @@ const AboutWorkflow = () => {
             </ScrollReveal>
 
             {/* — Hybrid Typography: ONE LOOP. Infinite IDEAS. — */}
-            <div ref={oneLoopRef} className="mt-48 md:mt-32 lg:mt-32 xl:mt-60 mb-10 md:mb-4 lg:mb-4 sm:mb-14 will-change-transform text-center overflow-hidden">
+            <div ref={oneLoopRef} className="mt-36 md:mt-32 lg:mt-32 xl:mt-60 mb-10 md:mb-4 lg:mb-4 sm:mb-14 will-change-transform text-center overflow-hidden">
               <p className="mask-line text-foreground leading-[0.95] tracking-tight">
                 <span className="font-inter-tight font-extrabold text-[11vw] sm:text-[9vw] md:text-[8vw] lg:text-[7vw] uppercase">ONE LOOP.</span>
                 <span className="font-garamond italic font-normal text-[11vw] sm:text-[9vw] md:text-[8vw] lg:text-[7vw] leading-[0.95]"> Infinite </span>

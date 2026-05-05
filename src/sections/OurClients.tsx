@@ -184,7 +184,7 @@ const OurClients = () => {
                 </div>
 
                 {/* Fila de Logos - Doble Marquee en Mobile / Simple en Desktop */}
-                <div className="w-full pt-20 md:pt-52 pb-8 md:pb-52 bg-background overflow-hidden logo-item-final opacity-0">
+                <div className="w-full pt-20 md:pt-52 pb-36 md:pb-40 lg:pb-64 bg-background overflow-hidden logo-item-final opacity-0">
                     
                     {/* Mobile Dual Marquees (Visible only on < 768px) */}
                     <div className="flex flex-col gap-10 md:hidden">

@@ -8,14 +8,14 @@ const GetInTouchLogo: React.FC<GetInTouchLogoProps> = ({ className = "" }) => {
     return (
         <div className={`flex flex-col items-start leading-[1.05] ${className}`}>
             {/* "Get in" - Inter Tight Semi Bold */}
-            <span className="text-brada-light [.light_&]:text-black font-inter font-semibold text-[3.5rem] md:text-[5.5rem] lg:text-[5.2rem] xl:text-[6.5rem] tracking-normal mb-1 md:mb-2">
+            <span className="text-brada-light [.light_&]:text-black font-inter font-semibold text-[clamp(4.5rem,14vw,8rem)] md:text-[5.5rem] lg:text-[5.2rem] xl:text-[6.5rem] tracking-normal mb-1 md:mb-2">
                 Get in
             </span>
 
             {/* "—touch" - ITC Garamond Italic with Red Underline */}
             <div className="relative inline-block leading-none">
-                <span className="text-brada-light [.light_&]:text-black font-garamond italic font-normal text-[4rem] md:text-[6rem] lg:text-[6rem] xl:text-[7.5rem] tracking-normal flex items-center gap-1 md:gap-2">
-                    <span className="inline-block w-8 md:w-16 h-[2px] md:h-[4px] bg-brada-light [.light_&]:bg-black -translate-y-[0.1em]"></span>
+                <span className="text-brada-light [.light_&]:text-black font-garamond italic font-normal text-[clamp(5.2rem,16vw,9rem)] md:text-[6rem] lg:text-[6rem] xl:text-[7.5rem] tracking-normal flex items-center gap-1 md:gap-2">
+                    <span className="inline-block w-8 md:w-16 h-[2.5px] md:h-[4px] bg-brada-light [.light_&]:bg-black -translate-y-[0.1em]"></span>
                     touch
                 </span>
 

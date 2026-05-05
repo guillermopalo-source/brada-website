@@ -102,6 +102,20 @@ export default function ProjectGallery({ project }: { project: Project }) {
                     }
                 }
 
+                @media (max-width: 767px) {
+                    .lg-custom-img-container {
+                        max-width: 100% !important;
+                        width: 100% !important;
+                        display: flex !important;
+                        justify-content: center !important;
+                    }
+                    .lg-custom-img-container img,
+                    .lg-custom-img-container video {
+                        width: 100% !important;
+                        height: auto !important;
+                    }
+                }
+
                 @media (min-width: 768px) and (max-width: 1023px) {
                     .lg-gallery-text-block h3 {
                         white-space: nowrap !important;
@@ -419,7 +433,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
                         {row.type === 'text' && (
                             row.variant === 'centered' ? (
 
-                                <div className={`flex flex-col md:flex-row gap-8 md:gap-20 text-left my-4 md:my-8 items-center w-full lg-centered-text-block lg-text-row ${row.className || ''}`}>
+                                <div className={`flex flex-col md:flex-row gap-8 md:gap-20 text-left md:my-8 items-center w-full lg-centered-text-block lg-text-row ${row.className || ''}`}>
                                     <ScrollReveal>
                                         <div className="shrink-0 w-full md:w-auto flex flex-col justify-center">
                                             <h3
@@ -454,10 +468,10 @@ export default function ProjectGallery({ project }: { project: Project }) {
 
                             ) : (
 
-                                <div className="flex flex-col md:flex-row gap-8 md:gap-24 py-8 md:py-12 items-start w-full lg-gallery-text-block lg-text-row">
+                                <div className={`flex flex-col md:flex-row gap-2 md:gap-24 md:py-12 items-start w-full lg-gallery-text-block lg-text-row ${row.className || ''}`}>
                                     <ScrollReveal>
                                         <div className="shrink-0">
-                                            <h3 className="text-foreground font-inter font-bold text-sm md:text-base uppercase tracking-wider">
+                                            <h3 className={`text-foreground font-inter font-bold text-sm md:text-base uppercase tracking-wider ${row.titleClassName || ''}`}>
                                                 {row.title}
                                             </h3>
                                         </div>
@@ -465,7 +479,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
 
                                     {row.text && (
                                         <ScrollReveal delay={100} className="max-w-2xl lg-text-wrapper">
-                                            <p className="text-foreground/80 text-sm md:text-base leading-relaxed text-left">
+                                            <p className="text-foreground/80 text-sm md:text-base leading-normal text-left">
                                                 {row.text}
                                             </p>
                                         </ScrollReveal>

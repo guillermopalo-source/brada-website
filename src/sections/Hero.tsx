@@ -174,9 +174,9 @@ const Hero = () => {
             </div>
 
             {/* Frase y Marquee */}
-            <div ref={phraseRef} className="relative z-20 w-full pt-10 pb-0">
+            <div ref={phraseRef} className="relative z-20 w-full pt-10 pb-12 md:pb-20">
               <div className="max-w-[1600px]">
-                <p className="text-black dark:text-brada-light font-inter font-semibold leading-[1.05] text-[2.1rem] md:text-[clamp(2.5rem,6.8vw,6.8rem)]">
+                <p className="text-black dark:text-brada-light font-inter font-semibold leading-[1.05] text-[2.1rem] md:text-[clamp(2.2rem,6.2vw,5.8rem)] lg:text-[clamp(2.5rem,6.8vw,6.8rem)]">
                   Transformamos{' '}
                   <span
                     ref={videoSlotRef}

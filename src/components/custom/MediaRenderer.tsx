@@ -23,7 +23,7 @@ export default function MediaRenderer({
                 loop
                 muted
                 playsInline
-                preload="none"
+                preload="auto"
                 className={className}
             >
                 <source src={src.replace(/\.mp4$/, ".webm").replace(/\.webm$/, ".webm")} type="video/webm" />
