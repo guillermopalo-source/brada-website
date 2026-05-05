@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SecondaryBradaLogo from '@/components/custom/SecondaryBradaLogo';
 import { useHeaderContext } from '@/context/HeaderContext';
 import OurClients from '@/sections/OurClients';
+import MediaRenderer from '@/components/custom/MediaRenderer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -187,19 +188,19 @@ export default function WorkPage() {
             <section className="lg:hidden w-full pt-4 -mt-4 md:mt-0 md:-mt-36 pb-12 bg-background">
                 <div className="px-0 md:px-[5px] grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-x-8 md:gap-y-10 max-w-[1750px] mx-auto">
                     {[
-                        { title: '↘ [Lemon Cash] PAGO CON QR CASHBACK', to: `/${l}/work/lemon-cash`, img: '/work_id/lemon/projects/campania_qr/work_page/lemon_campania_qr_thumb.avif', video: "/work_id/lemon/projects/campania_qr/more_works/lemon_loop_mw-wp.mp4" },
-                        { title: '↘ [Converse All Stars]', to: `/${l}/work/converse-all-stars`, img: '/work_id/converse/projects/all_stars/work_page/converse_all_stars_thumb.avif' },
-                        { title: '↘ [Maxibon]', to: `/${l}/work/maxibon`, img: '/work_id/maxibon/projects/skate_crush/work_page/maxibon_skate_crush_thumb.avif', video: "/work_id/maxibon/projects/skate_crush/hero_workgrid/gallery_thumb_loop-2.mp4" },
-                        { title: '↘ [GCBA - Tránsito]', to: `/${l}/work/ba`, img: '/work_id/ba/projects/transito/gallery_detail/ba-elige.avif' },
-                        { title: '↘ [Doritos]', to: `/${l}/work/doritos`, img: '/work_id/doritos/projects/campania/work_page/doritos_campania_thumb.avif', video: "/work_id/doritos/projects/campania/gallery_detail/gallery_doritos-1.mp4" },
-                        { title: '↘ [Cash App]', to: `/${l}/work/cash-app`, img: '/work_id/cashapp/projects/advertising/work_page/cashapp_campania_thumb.avif', video: "/work_id/cashapp/projects/advertising/work_page/gallery_cashapp-2.mp4" },
-                        { title: '↘ [Zonaprop]', to: `/${l}/work/zonaprop`, img: '/work_id/zona_prop/projects/entrevistas_clientes/work_page/zonajobs_work_id-1400.avif', comingSoon: true },
-                        { title: '↘ [CAV SBK]', to: `/${l}/work/cav-sbk`, img: '/work_id/cavsbk/projects/brand_identity/gallery_detail/cav-2_low.avif' },
-                        { title: '↘ [Menant]', to: `/${l}/work/menant`, img: '/work_id/menant/projects/branding/work_page/menant_gallery.avif' },
-                        { title: '↘ [Alto Palermo]', to: `/${l}/work/alto-palermo`, img: '/work_id/alto_palermo/projects/mujeres_bici/gallery_detail/alto_palermo_mujeres-thmb.avif' },
-                        { title: '↘ [Luxora]', to: `/${l}/work/luxora`, img: '/work_id/luxora/projects/brand_identity/gallery_detail/Luxora_logo-1.avif' },
-                        { title: '↘ [Itaú Bank]', to: `/${l}/work/itau-bank`, img: '/work_id/itau/projects/cx_day/work_page/gallery_itau-1.avif' },
-                        { title: '↘ [Banco Hipotecario]', to: `/${l}/work/banco-hipotecario`, img: '/work_id/hipotecario/projects/graphic_design/work_page/hipotecario_low.avif' },
+                        { title: '↘ [Lemon Cash] PAGO CON QR CASHBACK', to: `/${l}/work/lemon-cash`, img: '/work_id/lemon/projects/campania_qr/work_page/lemon_campania_qr_thumb', video: "/work_id/lemon/projects/campania_qr/more_works/lemon_loop_mw-wp" },
+                        { title: '↘ [Converse All Stars]', to: `/${l}/work/converse-all-stars`, img: '/work_id/converse/projects/all_stars/work_page/converse_all_stars_thumb' },
+                        { title: '↘ [Maxibon]', to: `/${l}/work/maxibon`, img: '/work_id/maxibon/projects/skate_crush/work_page/maxibon_skate_crush_thumb', video: "/work_id/maxibon/projects/skate_crush/hero_workgrid/gallery_thumb_loop-2" },
+                        { title: '↘ [GCBA - Tránsito]', to: `/${l}/work/ba`, img: '/work_id/ba/projects/transito/gallery_detail/ba-elige' },
+                        { title: '↘ [Doritos]', to: `/${l}/work/doritos`, img: '/work_id/doritos/projects/campania/work_page/doritos_campania_thumb', video: "/work_id/doritos/projects/campania/gallery_detail/gallery_doritos-1" },
+                        { title: '↘ [Cash App]', to: `/${l}/work/cash-app`, img: '/work_id/cashapp/projects/advertising/work_page/cashapp_campania_thumb', video: "/work_id/cashapp/projects/advertising/work_page/gallery_cashapp-2" },
+                        { title: '↘ [Zonaprop]', to: `/${l}/work/zonaprop`, img: '/work_id/zona_prop/projects/entrevistas_clientes/work_page/zonajobs_work_id-1400', comingSoon: true },
+                        { title: '↘ [CAV SBK]', to: `/${l}/work/cav-sbk`, img: '/work_id/cavsbk/projects/brand_identity/gallery_detail/cav-2_low' },
+                        { title: '↘ [Menant]', to: `/${l}/work/menant`, img: '/work_id/menant/projects/branding/work_page/menant_gallery' },
+                        { title: '↘ [Alto Palermo]', to: `/${l}/work/alto-palermo`, img: '/work_id/alto_palermo/projects/mujeres_bici/gallery_detail/alto_palermo_mujeres-thmb' },
+                        { title: '↘ [Luxora]', to: `/${l}/work/luxora`, img: '/work_id/luxora/projects/brand_identity/gallery_detail/Luxora_logo-1' },
+                        { title: '↘ [Itaú Bank]', to: `/${l}/work/itau-bank`, img: '/work_id/itau/projects/cx_day/work_page/gallery_itau-1' },
+                        { title: '↘ [Banco Hipotecario]', to: `/${l}/work/banco-hipotecario`, img: '/work_id/hipotecario/projects/graphic_design/work_page/hipotecario_low' },
                     ].map((item) => (
                         <MobileWorkCard key={item.title} item={item} />
                     ))}
@@ -217,15 +218,15 @@ export default function WorkPage() {
                             className="relative h-[80vh] flex-none"
                             style={{ width: isLgTrack ? '2400px' : '3000px' }}
                         >
-                            <WorkItem title="↘ [Lemon Cash] 360º Campaign Project" left="100px" top="4%" w="550px" lgW="480px" h="302px" lgH="264px" to={`/${l}/work/lemon-cash`} img="/work_id/lemon/projects/campania_qr/work_page/lemon_campania_qr_thumb.avif" video="/work_id/lemon/projects/campania_qr/more_works/lemon_loop_mw-wp.mp4" speed="1" setHover={setIsHovering} />
-                            <WorkItem title="↘ [Converse Alls Stars] DIGITAL CONTENT" left="590px" top="61%" w="450px" lgW="390px" h="280px" lgH="245px" to={`/${l}/work/converse-all-stars`} img="/work_id/converse/projects/all_stars/work_page/converse_all_stars_thumb.avif" speed="0.8" setHover={setIsHovering} />
-                            <WorkItem title="↘ [Maxibon] FILM, MOTION & VFX" left="900px" top="10%" w="400px" h="223px" to={`/${l}/work/maxibon`} img="/work_id/maxibon/projects/skate_crush/work_page/maxibon_skate_crush_thumb.avif" video="/work_id/maxibon/projects/skate_crush/hero_workgrid/gallery_thumb_loop-2.mp4" speed="1.2" setHover={setIsHovering} />
-                            <WorkItem title="↘ [GCBA - Tránsito] STREET ACTIVATION" left="1400px" top="65%" w="300px" h="221px" to={`/${l}/work/ba`} img="/work_id/ba/projects/transito/gallery_detail/ba-elige.avif" speed="0.9" setHover={setIsHovering} />
-                            <WorkItem title="↘ [Doritos] MOTION & VFX PRODUCTION" left="2100px" top="65%" w="400px" h="260px" to={`/${l}/work/doritos`} img="/work_id/doritos/projects/campania/work_page/doritos_campania_thumb.avif" video="/work_id/doritos/projects/campania/gallery_detail/gallery_doritos-1.mp4" speed="1.1" setHover={setIsHovering} />
-                            <WorkItem title="↘ [Cash App] DIGITAL CAMPAIGN" left="1600px" top="3%" w="400px" h="240px" to={`/${l}/work/cash-app`} img="/work_id/cashapp/projects/advertising/work_page/cashapp_campania_thumb.avif" video="/work_id/cashapp/projects/advertising/work_page/gallery_cashapp-2.mp4" speed="1.3" setHover={setIsHovering} />
-                            <WorkItem title="↘ [Zonaprop] FILM PRODUCTION" left="2230px" lgLeft="2360px" top="1%" w="440px" lgW="380px" h="295px" lgH="255px" to={`/${l}/work/zonaprop`} img="/work_id/zona_prop/projects/entrevistas_clientes/work_page/zonajobs_work_id-1400.avif" speed="1" setHover={setIsHovering} comingSoon />
-                            <WorkItem title="↘ [Itaú Bank] EMPLOYEE MARKETING" left="3700px" lgLeft="3700px" top="55%" w="300px" h="395px" to={`/${l}/work/itau-bank`} img="/work_id/itau/projects/cx_day/work_page/gallery_itau-1.avif" speed="1.2" setHover={setIsHovering} />
-                            <WorkItem title="↘ [Hipotecario] GRAPHIC DESIGN" left="2950px" lgLeft="3000px" top="25%" w="310px" h="310px" to={`/${l}/work/banco-hipotecario`} img="/work_id/hipotecario/projects/graphic_design/work_page/hipotecario_low.avif" speed="0.9" setHover={setIsHovering} />
+                            <WorkItem title="↘ [Lemon Cash] 360º Campaign Project" left="100px" top="4%" w="550px" lgW="480px" h="302px" lgH="264px" to={`/${l}/work/lemon-cash`} img="/work_id/lemon/projects/campania_qr/work_page/lemon_campania_qr_thumb" video="/work_id/lemon/projects/campania_qr/more_works/lemon_loop_mw-wp" speed="1" setHover={setIsHovering} />
+                            <WorkItem title="↘ [Converse Alls Stars] DIGITAL CONTENT" left="590px" top="61%" w="450px" lgW="390px" h="280px" lgH="245px" to={`/${l}/work/converse-all-stars`} img="/work_id/converse/projects/all_stars/work_page/converse_all_stars_thumb" speed="0.8" setHover={setIsHovering} />
+                            <WorkItem title="↘ [Maxibon] FILM, MOTION & VFX" left="900px" top="10%" w="400px" h="223px" to={`/${l}/work/maxibon`} img="/work_id/maxibon/projects/skate_crush/work_page/maxibon_skate_crush_thumb" video="/work_id/maxibon/projects/skate_crush/hero_workgrid/gallery_thumb_loop-2" speed="1.2" setHover={setIsHovering} />
+                            <WorkItem title="↘ [GCBA - Tránsito] STREET ACTIVATION" left="1400px" top="65%" w="300px" h="221px" to={`/${l}/work/ba`} img="/work_id/ba/projects/transito/gallery_detail/ba-elige" speed="0.9" setHover={setIsHovering} />
+                            <WorkItem title="↘ [Doritos] MOTION & VFX PRODUCTION" left="2100px" top="65%" w="400px" h="260px" to={`/${l}/work/doritos`} img="/work_id/doritos/projects/campania/work_page/doritos_campania_thumb" video="/work_id/doritos/projects/campania/gallery_detail/gallery_doritos-1" speed="1.1" setHover={setIsHovering} />
+                            <WorkItem title="↘ [Cash App] DIGITAL CAMPAIGN" left="1600px" top="3%" w="400px" h="240px" to={`/${l}/work/cash-app`} img="/work_id/cashapp/projects/advertising/work_page/cashapp_campania_thumb" video="/work_id/cashapp/projects/advertising/work_page/gallery_cashapp-2" speed="1.3" setHover={setIsHovering} />
+                            <WorkItem title="↘ [Zonaprop] FILM PRODUCTION" left="2230px" lgLeft="2360px" top="1%" w="440px" lgW="380px" h="295px" lgH="255px" to={`/${l}/work/zonaprop`} img="/work_id/zona_prop/projects/entrevistas_clientes/work_page/zonajobs_work_id-1400" speed="1" setHover={setIsHovering} comingSoon />
+                            <WorkItem title="↘ [Itaú Bank] EMPLOYEE MARKETING" left="3700px" lgLeft="3700px" top="55%" w="300px" h="395px" to={`/${l}/work/itau-bank`} img="/work_id/itau/projects/cx_day/work_page/gallery_itau-1" speed="1.2" setHover={setIsHovering} />
+                            <WorkItem title="↘ [Hipotecario] GRAPHIC DESIGN" left="2950px" lgLeft="3000px" top="25%" w="310px" h="310px" to={`/${l}/work/banco-hipotecario`} img="/work_id/hipotecario/projects/graphic_design/work_page/hipotecario_low" speed="0.9" setHover={setIsHovering} />
                         </div>
                     </div>
                 </section>
@@ -430,7 +431,7 @@ function WorkItem({ left, lgLeft, top, w, h, lgW, lgH, to, video, img, speed, ti
         <>
             {/* Capa 1: Thumbnail estático — siempre visible por defecto */}
             {img && (
-                <img
+                <MediaRenderer
                     ref={imgRef}
                     src={img}
                     alt={title || 'Work thumbnail'}
@@ -441,12 +442,9 @@ function WorkItem({ left, lgLeft, top, w, h, lgW, lgH, to, video, img, speed, ti
 
             {/* Capa 2: Video loop hover — invisible hasta hover */}
             {video && (
-                <video
+                <MediaRenderer
                     ref={videoRef}
                     src={video}
-                    muted
-                    loop
-                    playsInline
                     className={mediaClasses}
                     style={{ opacity: 0 }}
                 />
@@ -594,7 +592,7 @@ function MobileWorkCard({ item }: { item: MobileWorkCardItem }) {
                 onMouseLeave={handleMouseLeave}
             >
                 {/* Image layer */}
-                <img
+                <MediaRenderer
                     ref={imgRef}
                     src={item.img}
                     alt={item.title}
@@ -603,12 +601,9 @@ function MobileWorkCard({ item }: { item: MobileWorkCardItem }) {
 
                 {/* Video layer (only for hover) */}
                 {item.video && (
-                    <video
+                    <MediaRenderer
                         ref={videoRef}
                         src={item.video}
-                        muted
-                        loop
-                        playsInline
                         className="absolute inset-0 w-full h-full object-cover opacity-0 transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                     />
                 )}

@@ -168,7 +168,8 @@ const Hero = () => {
             >
               <div className="absolute inset-0 bg-black">
                 <video autoPlay loop muted playsInline preload="auto" className="absolute inset-0 w-full h-full object-cover">
-                  <source src="/hero_home/campania_qr/lemon_campania_qr_home_loop.mp4" type="video/mp4" />
+                  <source src="/videos_agency/main_brada-home.webm" type="video/webm" />
+                  <source src="/videos_agency/main_brada-home.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
